@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<!--Imports header from assets -->
+<% include assets/head %>
+
+<body>
+
+    <!--Imports navbar from assets -->
+    <% include assets/navbar %>
+ 
+    <div class="col-lg-12">
+        <div class=" messageEmpty ">
+            <a onclick="document.getElementById('user-messages').submit();" class="btn btn-outline-warning btn-lg  col-lg-2 cancelForm ">Messages<span class="sr-only"></span></a>
+            <a onclick="document.getElementById('user-items').submit();" class="btn btn-warning btn-lg  col-lg-2 cancelForm">Sales Items<span class="sr-only"></span></a>
+
+            <form class="messageEmpty" id="user-items" action="/user/sales" method="GET"></form>
+            <form class="messageEmpty" id="user-messages" action="/user/messages" method="GET"></form>
+        </div>
+
+        <% if(noResult){ %>
+            <div><h1>You have not made any posts.</h1></div>
+            
+            
+
+                    <% } else { %>
+        <div class="items-dashboard col-lg-12">
+            <div class="row outline">
+                <div class="btn col-md-3 messageHeader" style="border-right:2px solid black;">
+                    <h5 style="display:inline; float:left;">Date&nbsp&nbsp</h5><h5 id="sortBtn" style="display:inline; float:left;" onclick="document.getElementById('sort-option').value = 'date';
+                               document.getElementById('sort-items').submit();">
+                        <img src="/sortBtn.png" style="width:25px; height:25px;" />
+                    </h5>
+                </div>
+                <div class="btn col-md-3 messageHeader" style="border-right:2px solid black;">
+                    <h5 style="display:inline; float:left;">Item Name&nbsp&nbsp</h5><h5 id="sortBtn" style="display:inline; float:left;" onclick="document.getElementById('sort-option').value = 'name';
+                               document.getElementById('sort-items').submit();">
+                        <img src="/sortBtn.png" style="width:25px; height:25px;" />
+                    </h5>
+                </div>
+                <div class="btn col-md-3 messageHeader" style="border-right:2px solid black;">
+                    <h5 style="display:inline; float:left;">Price&nbsp&nbsp</h5><h5 id="sortBtn" style="display:inline; float:left;" onclick="document.getElementById('sort-option').value = 'price';
+                               document.getElementById('sort-items').submit();">
+                        <img src="/sortBtn.png" style="width:25px; height:25px;" />
+                    </h5>
+                </div>
+                <h5 class="col-md-2 messageHeader"></h5>
+            </div>
+
+            <!--Loop to Display Sales item for each row-->
+            <% for(var i=0; salesItems[i]; i++) { %>
+            <div class="row messageHeader outline" style="border-bottom:1px solid black;">
+                <h5 class="col-md-3 my-auto"><%=salesItems[i].date_upload.toString().substring(0,25)%></h5>
+                <h5 class="col-md-3 my-auto"><%=salesItems[i].name%></h5>
+                <h5 class="col-md-3 my-auto"><%=salesItems[i].price%></h5>           
+                <div class="col text-center my-auto btn btn-warning" style="border-left:2px solid black;"
+                onclick="document.getElementById('itemID').value= '<%=salesItems[i].itemID%>';
+                            document.getElementById('delete-item').submit();"><h5 >Delete</h5></div>
+                </div>
+                <% } %>
+            </div>
+    </div>
+
+    <% } %>
+    
+    <!-- Forms to call Sorting functions -->
+    <form class="messageEmpty invisible-form hidden-select" id="sort-items" action="/user/sales/sort" method="POST">
+        <select id="sort-option" class="btn btn-warning " name="sortBy">
+            <option value="date"></option>
+            <option value="name"></option>
+            <option value="price"></option>
+        </select>
+    </form>
+
+    <form class="messageEmpty invisible-form" id="delete-item" name="delete-item" action="/user/sales/delete" method="POST">
+        <input type="hidden" id="itemID" name="itemID" >
+    </form>
+</body>
+<% include assets/footer %>
+</html>
+
+
+<style>
+</style>
+
+
+
+ 
+ 

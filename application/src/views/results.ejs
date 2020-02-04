@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!--Imports header from assets -->
+<% include assets/head %>
+
+<body>
+
+    <!--Imports navbar from assets -->
+    <% include assets/navbar %>
+
+    <div class="row justify-content-end search-sort">
+        <form class="col-2" action="/results/sort" method="post">
+            <select id="" class="btn btn-warning " name="sortBy" onchange="this.form.submit()">
+                <option value="" selected>Sort By</option>
+
+                <option value="price-asc">Price: High to Low </option>
+                <option value="price-desc">Price: Low to High </option>
+
+            </select>
+        </form>
+    </div>
+
+
+    <!--Container of result listings -->
+    <div class="itemContainer container-fluid">
+
+        <%if(typeof(displayMessage) != "undefined") { %> <h2><%=displayMessage%></h2> <% } %>
+
+
+
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <% for(var i=0; searchResult[i]; i=i+4) { %><br>
+                <div class="card border-dark">
+                    <img class="card-image ml-auto mr-auto" id=<%="searchResult[i].name"%>
+                        src="/post_images/resized/<%=searchResult[i].picture%>" />
+                    <h2 id="itemName"><%=searchResult[i].name %></h2>
+                    <h3 id="itemPrice">
+                        $ <%=searchResult[i].price%><br></h4>
+                        <a data-target="#itemDetails" class="openModal btn btn-warning" href="" data-toggle="modal"
+                            data-description="<%=searchResult[i].description%>" data-img="<%=searchResult[i].picture%>"
+                            data-name="<%= searchResult[i].name %>" data-price="<%=searchResult[i].price%>">Details</a>
+
+                </div>
+                <% } %>
+
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <% for(var i=1; searchResult[i]; i=i+4) { %><br>
+                <div class="card border-dark">
+                    <img class="card-image ml-auto mr-auto" id=<%="searchResult[i].name"%>
+                        src="/post_images/resized/<%=searchResult[i].picture%>" />
+                    <h2 id="itemName"><%=searchResult[i].name %></h2>
+                    <h3 id="itemPrice">
+                        $ <%=searchResult[i].price%><br></h4>
+                        <a data-target="#itemDetails" class="openModal btn btn-warning" href="" data-toggle="modal"
+                            data-description="<%=searchResult[i].description%>" data-img="<%=searchResult[i].picture%>"
+                            data-name="<%= searchResult[i].name %>" data-price="<%=searchResult[i].price%>">Details</a>
+
+                </div>
+                <% } %>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+                <% for(var i=2; searchResult[i]; i=i+4) { %><br>
+                <div class="card border-dark">
+                    <img class="card-image ml-auto mr-auto" id=<%="searchResult[i].name"%>
+                        src="/post_images/resized/<%=searchResult[i].picture%>" />
+                    <h2 id="itemName"><%=searchResult[i].name %></h2>
+                    <h3 id="itemPrice">$ <%=searchResult[i].price%><br></h3>
+                    <a data-target="#itemDetails" class="openModal btn btn-warning" href="" data-toggle="modal"
+                        data-description="<%=searchResult[i].description%>" 
+                        data-img="<%=searchResult[i].picture%>"
+                        data-name="<%= searchResult[i].name %>" 
+                        data-price="<%=searchResult[i].price%>"
+                        data-itemid="<%=searchResult[i].itemID%>">Details</a>
+                </div>
+                <% } %>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+                <% for(var i=3; searchResult[i]; i=i+4) { %><br>
+                <div class="card border-dark">
+                    <img class="card-image ml-auto mr-auto " id=<%="searchResult[i].name"%>
+                        src="/post_images/resized/<%=searchResult[i].picture%>" />
+                    <h2 id="itemName"><%=searchResult[i].name %></h2>
+                    <h3 id="itemPrice">$ <%=searchResult[i].price%><br></h3>
+                    <a data-target="#itemDetails" class="openModal btn btn-warning" href="" data-toggle="modal"
+                        data-description="<%=searchResult[i].description%>" data-img="<%=searchResult[i].picture%>"
+                        data-name="<%= searchResult[i].name %>" data-price="<%=searchResult[i].price%>"
+                        data-itemid="<%=searchResult[i].itemId%>">Details</a>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<% include assets/footer %>
+
+</html>

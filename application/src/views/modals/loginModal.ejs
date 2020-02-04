@@ -1,0 +1,55 @@
+<!--Login and registeration modal-->
+
+<div class="modal fade " id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-modal-container">
+            <div class="modal-header loginProperties">
+                <% include ../assets/messages.ejs%>
+                    <div class="ml-auto mr-8"><b>LOG IN</b></div>
+                <button type="button" class="close white" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body loginProperties">
+                <form  id="login-form">
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    <input type="checkbox" onclick="showPass()">Show Password
+                </div>
+
+                    
+                    <input type="submit" value="Login" class="btn btn-success">
+
+                    <a href="#">Forgot Password / Email</a>
+                </form>
+                
+            </div>
+
+            <div class="modal-footer loginProperties">
+                <p class="lead mt-4">Don't have An Account? </p>
+                <button type="button" class="btn btn-light" data-dismiss="modal" data-toggle="modal" href="#registerModal">Register</button>
+              </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+function showPass() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+}
+</script>
+
+

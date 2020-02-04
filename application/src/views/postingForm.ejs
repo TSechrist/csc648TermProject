@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!--Imports header from assets -->
+<% include assets/head %>
+
+<body id="postingFormPage">
+    <!--Imports navbar from assets -->
+    <% include assets/navbar %>
+    <% include assets/messages.ejs%>
+
+    <!--POSTING FORM-->
+    <%if(itemPosted) { %>
+
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#successfulPost').modal('show');
+        });
+    </script>
+    <!-- <div class="PostingFormContainer">
+        <h2 id="succesful-post-modal-header" class="text-center">Thank you for selling with <h2 class="text-center" id="GatorTraderLogoSmall">Gator Trader!</h2></h2>
+
+        <h1 id="succesful-post">Your post was succesfully made</h1></div> -->
+    <%} else { %>
+
+
+    <div class="PostingFormContainer">
+        <form action="/postingform" method="post" class="PostingForm" enctype="multipart/form-data" role="form" data-toggle="validator">
+            <div class="postingFormTitle">
+                <h2><strong><u>Posting Form</u></strong></h2>
+            </div>
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg">Item Name </label>
+                <div class="row-lg-12">
+                    <input type="text" id="item-post-name" name="itemName" class="border-dark form-control" pattern="[ A-Za-z0-9]+" maxlength="20"
+                           placeholder="Alphanumeric characters only." val="" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg">Category </label>
+                <div class="row-lg-12">
+                    <select id="item-post-category" name="category" class="border-dark form-control">
+                        <option value="">Choose category</option>
+                        <% for(var i=0; i < categories.length; i++) {%>
+                        <option value="<%=categories[i]%>"><%=categories[i]%></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg">Description </label>
+                <div class="row-lg-12">
+                    <textarea id="item-post-description" name="description" class="form-control border-dark col-lg-12"
+                              rows="5" cols="32" maxlength="150" required></textarea>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg">Price </label>
+                <div class="row-lg-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text border-dark">$</span>
+                        <input type="text" id="item-post-price" name="price" class="form-control col-sm-4 border-dark" maxlength="7"
+                               pattern="^[0-9]+(\.[0-9]{1,2})?$" placeholder="dollars.cents" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg" for="postImage">Image </label>
+                <div class="row-lg-12">
+                    <input name="image" type="file" required />
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-2 col-form-label-lg"></label>
+                <input name="terms" type="checkbox" id="terms" data-error="Required to post" required>
+                <p><br />&nbsp&nbsp&nbspBy checking this box I agree to the&nbsp<u>Terms and Conditions.</u><br />&nbsp&nbsp&nbspAdminstrator approval of all posts may take up to 24 hours.</p>
+                <div class="help-block with-errors"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class="postingLabel col-sm-3 col-form-label-lg"></label>
+                <div class="row-lg-12">
+                    <div class="CancelandSubmitContainer">
+                        <!--<button class="postingCancelButton  btn btn-secondary btn-outline-success btn-lg row-sm-12" id="navItem" type="button" name="button">Cancel</button>-->
+                        <%if(isLogin) { %>
+                        <button type="submit" class="postingSubmitButton btn btn-primary btn-outline-warning btn-lg row-sm-12" id="submitItem" name="entry">Submit</button>
+                        <%} else { %>
+                        <button type="button" class="postingSubmitButton btn btn-primary btn-outline-warning btn-lg row-sm-12" data-toggle="modal" data-target="#loginModal">Submit</button>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <% } %>
+
+    <script>
+        window.onbeforeunload = function () {
+            localStorage.setItem("itemName", $('#item-post-name').val());
+            localStorage.setItem("description", $('#item-post-description').val());
+            localStorage.setItem("price", $('#item-post-price').val());
+            localStorage.setItem("category", $('#item-post-category').val());
+        }
+
+        window.onload = function () {
+            var itemName = localStorage.getItem("itemName");
+            if (itemName !== null && itemName !== "undefined") $('#item-post-name').val(itemName);
+
+            var description = localStorage.getItem("description");
+            if (description !== null && description !== "undefined") $('#item-post-description').val(description);
+
+            var price = localStorage.getItem("price");
+            if (price !== null && price !== "undefined") $('#item-post-price').val(price);
+
+            var category = localStorage.getItem("category");
+            if (category !== null && category !== "undefined") $('#item-post-category').val(category);
+        }
+    </script>
+</body>
+<% include assets/footer %>
+</html>

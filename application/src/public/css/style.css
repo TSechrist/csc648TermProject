@@ -1,0 +1,797 @@
+body {
+    position: relative;
+}
+
+body::after {
+        content: '';
+        display: block;
+        height: 80px;
+}
+
+footer {
+    background-color: #330033;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    margin-bottom: -150px;
+    box-shadow: 0 100vh 0 100vh #330033;
+}
+
+
+
+#search-bar {
+    margin-left: 2px;
+}
+
+#search-submit {
+    margin-left: 2px;
+}
+
+.search-sort {
+    padding-top: 2%;
+}
+
+.invisible-form {
+    visibility: hidden;
+    position: relative;
+    z-index: -1;
+}
+
+.GatorLogo {
+    width: 387px;
+    height: 95px;
+    position: relative;
+    right: 10px;
+}
+
+.GatorTraderBannerLogo {
+    margin: 0;
+    height: 80px;
+    width: 80px;
+    border: 2px solid purple;
+    border-radius: 25px;
+}
+
+.GatorTraderLogo {
+    font-family: 'Lobster', cursive;
+    color: #FAF5FF;
+    font-size: 50px;
+}
+
+#GatorTraderLogoSmall {
+    font-family: 'Lobster', cursive;
+    color: black;
+    font-size: 40px;
+}
+
+.hidden-select {
+    visibility: hidden;
+}
+
+/*Temporary sizing images to the same size by stretching*/
+img {
+    width: 250px; /* You can set the dimensions to whatever you want */
+    height: 250px;
+    object-fit: stretch;
+}
+
+/*This is styling for the header for description modal*/
+#itemHeader {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/*This is styling for the header for succsful post modal*/
+#succesful-post-modal-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/*This is styling for the body for succesful modal*/
+#succesful-post-modal-body {
+    font-family: 'Slabo 27px', serif;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#GatorTraderLogoSmall {
+    font-family: 'Lobster', cursive;
+    color: black;
+    font-size: 40px;
+}
+
+/*This css fixes the horizontal scrolling into white space bug on posting form page*/
+#postingFormPage {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.Banner {
+    position: -webkit-fixed;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    border-bottom: 2px dotted red;
+    width: 100%;
+    height: 200px;
+    z-index: 9999;
+}
+
+.LoginButton {
+    z-index: 9999;
+    float: right;
+    padding-right: 20px;
+}
+
+.card-group {
+    display: flex;
+}
+
+.PostingFormContainer {
+    position: relative;
+    margin-left: 200px;
+    border: 2px solid;
+    height: 100%;
+    width: 75%;
+    background-color: #d3d3d3;
+}
+
+.postingFormTitle h2 {
+    position: relative;
+    left: 223px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    top: 10px
+}
+
+.PostingForm {
+    position: relative;
+    left: 20%;
+}
+
+.postingLabel {
+    margin-right: 50px;
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+.CancelandSubmitContainer {
+    position: relative;
+    bottom: 40px;
+    width: 355px;
+    height: 60px;
+    background-color: inherit;
+    top: 1px;
+    right: 90px;
+}
+
+.postingCancelButton {
+    color: black;
+    width: 150px;
+}
+
+.postingSubmitButton {
+    width: 150px;
+    color: black;
+}
+
+.fieldRequiredText {
+    position: relative;
+    bottom: 100;
+}
+
+.itemListing {
+    margin: 100px auto;
+    left: 10px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border: 1px solid;
+}
+
+.navbar {
+    background-color: #330033;
+}
+
+.Introduction {
+    padding-top: 20px;
+    position: relative;
+    margin: auto 2.5%;
+    font-family: sans-serif;
+}
+
+.classSectionHeader {
+    text-align: center;
+    color: white;
+    background-color: #330033;
+    z-index: 9999;
+}
+
+h1 {
+    margin: 0;
+    position: absolute;
+    display: inline-block;
+    font-size: 50px;
+    bottom: 1px;
+    left: 0;
+}
+
+.GatorTrader {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+}
+
+.LogoPlusSearch {
+    top: 20px;
+    margin: 0;
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+.SearchBar {
+    margin: auto;
+    position: relative;
+    bottom: 41px;
+    width: 456px;
+    height: 41px;
+    background-color: #3a4750;
+}
+
+.dropdownMenu {
+    margin: auto;
+    left: 25%;
+    bottom: 43px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropDown {
+    margin: 0;
+    height: 46px;
+    right: -7%;
+    position: relative;
+    display: inline-block;
+    border: none;
+}
+
+.Searchwindow {
+    margin: 0;
+    position: relative;
+    height: 46px;
+    display: inline-block;
+    width: 465px;
+    border: none;
+    right: -9%;
+}
+
+.searchButton {
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    width: 150px;
+    margin: 0;
+    font-size: 20px;
+}
+
+
+input[type=text] {
+    width: 350px;
+    color: black;
+    font-weight: 600;
+}
+
+input[type=email] {
+    width: 350px;
+    color: black;
+    font-weight: 600;
+}
+
+input[type=password] {
+    width: auto;
+    color: black;
+    font-weight: 600;
+}
+
+input[type=submit] {
+    width: 150px;
+    height: 40px;
+    border: none;
+    color: black;
+    font-weight: 600;
+}
+
+.GatorTraderBannerLogo {
+    margin: 0;
+    height: 80px;
+    width: 80px;
+    border: 2px solid purple;
+    border-radius: 25px;
+}
+
+.GatorTraderLogo {
+    font-family: 'Lobster', cursive;
+    color: #FAF5FF;
+    font-size: 50px;
+}
+
+.aboutButton {
+    font-size: 35px;
+}
+
+.sellButton{
+        font-size: 35px;
+        height: 40px;
+        width: 50px;
+}
+
+/* .aboutButton {
+    margin: 0;
+    font-size: 30px;
+    color: #2B8C25;
+} */
+
+.contentOnPage {
+    top: 230px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.CarouselContainer {
+    margin: auto;
+    background-color: grey;
+    position: relative;
+    top: 270px;
+    width: 100%;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.resultsContainer {
+    position: relative;
+    margin: auto;
+    top: 25%;
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.sortDropDown {
+    position: relative;
+    left: 93%;
+}
+
+#resultArea {
+    max-width: 500px;
+    margin: auto;
+}
+
+#itemName {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#itemPrice {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#itemDescription {
+    font-family: 'Slabo 27px', serif;
+    font-size: 18px;
+}
+
+#navItem {
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+#submitItem {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 25px;
+}
+
+#brandName {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 48px;
+    color: gold;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed !important;
+    z-index: 1;
+    overflow: auto
+}
+
+.searchArea {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+}
+
+    .SearchArea input {
+        height: 30px;
+        width: 200px;
+    }
+
+.bar-item {
+    padding: 8px 16px;
+    float: center;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0
+}
+
+.btn, .button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.btn, .button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+    .disabled, .btn:disabled, .button:disabled {
+        cursor: not-allowed;
+        opacity: 0.3
+    }
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "helvetica", sans-serif
+}
+
+.sidebar {
+    width: 120px;
+    background: #222;
+    color: gold
+}
+
+#main {
+    margin-left: 120px
+}
+
+.bar-block .dropdown-hover .button, .bar-block .dropdown-click .button {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px
+}
+
+.bar .button {
+    white-space: normal
+}
+
+.disabled *, :disabled * {
+    pointer-events: none
+}
+
+.dropdown-hover.mobile, .dropdown-hover.mobile .btn, .dropdown-hover.mobile .button, .dropdown-click.mobile, .dropdown-click.mobile .btn, .dropdown-click.mobile .button {
+    width: 100%
+}
+
+.button:hover {
+    color: #000 !important;
+    background-color: #ccc !important
+}
+
+.padding-large {
+    padding: 12px 24px !important
+}
+
+.purple {
+    color: gold !important;
+    background-color: #2b0542 !important
+}
+
+.hover-purple:hover {
+    color: darkgoldenrod !important;
+    background-color: #5b0a8c !important
+}
+
+.top, .bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1
+}
+
+.top {
+    top: 0
+}
+
+.bottom {
+    bottom: 0
+}
+
+@media (min-width:993px) {
+    .modal-content {
+        width: 900px
+    }
+
+    .hide-large {
+        display: none !important
+    }
+
+    .sidebar.collapse {
+        display: block !important
+    }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+    .hide-medium {
+        display: none !important
+    }
+}
+
+@media (max-width:601px) {
+    .hide-small {
+        display: none !important
+    }
+}
+
+.opacity, .hover-opacity:hover {
+    opacity: 0.60
+}
+
+.opacity-off, .hover-opacity-off:hover {
+    opacity: 1
+}
+
+.opacity-max {
+    opacity: 0.25
+}
+
+.opacity-min {
+    opacity: 0.75
+}
+
+.center {
+    text-align: center !important
+}
+
+.small {
+    font-size: 12px !important
+}
+
+.medium {
+    font-size: 15px !important
+}
+
+.large {
+    font-size: 18px !important
+}
+
+.padding-large {
+    padding: 12px 24px !important
+}
+
+.padding-huge {
+    padding: 35px
+}
+
+.font {
+    font-family: 'Slabo 27px', serif;
+    font-size: 18px;
+    color: gold;
+}
+
+.right {
+    text-align: right
+}
+
+.shift-down {
+    padding-top: 20px;
+}
+
+.shiftCategory {
+    padding-top: 30px;
+}
+
+.left {
+    text-align: left
+}
+
+.col-4-result {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    max-lines: 50;
+}
+
+.itemDes {
+    height: 75px;
+    width: 300px;
+}
+
+.loginProperties {
+    background-color: black;
+    color: white;
+}
+
+.login-modal-container {
+    width: 600px;
+    max-height: fit-content;
+}
+
+#registerModal {
+    overflow-y: auto;
+}
+
+/* 
+.register-modal-container {
+    width: 600px;
+    max-height: fit-content;
+} */
+
+.modalMessageFont {
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#formSubmit {
+    float: right;
+}
+
+/*Added for User Dash*/
+.dash {
+    width: 70%;
+    height: 450px;
+    background-color: lightgray;
+    position: absolute;
+    left: 410px;
+    bottom: 150px;
+}
+
+.dashText {
+    position: relative;
+    color: black;
+}
+
+.messageHeader {
+    color: black;
+    height: 40%;
+}
+
+.messageFriends {
+    text-align: left;
+    width: 200px;
+    height: 300px;
+}
+
+.buttonSpacing {
+    top: 350px;
+    left: 15px;
+}
+
+.buttonSpacing2 {
+    top: 150px;
+    left: 200px;
+}
+
+.btn-group1 .button {
+    background-color: lightgray; /* Green */
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+    cursor: pointer;
+    display: block;
+}
+
+    .btn-group1 .button:not(:last-child) {
+        border-bottom: none; /* Prevent double borders */
+    }
+
+    .btn-group1 .button:hover {
+        background-color: #3e8e41;
+    }
+
+.messageBox {
+    width: 100%;
+    height: 24%;
+    border: 1px solid black;
+    color: black;
+}
+
+.messageUser {
+    width: 100%;
+    height: 12%;
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+}
+
+.messageFriend {
+    width: 100%;
+    height: 10%;
+    border: 1px solid black;
+    padding: 15px 32px;
+    text-align: right;
+}
+
+.messageEmpty {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    position: relative;
+    padding-top: 25px;
+}
+
+#sellbtn{
+    margin-left: 5px;
+
+}
+
+.welcomeText {
+    color: white;
+}
+
+/*end for user dash*/
+
+/*Begin for Contact Seller*/
+
+.items-dashboard {
+    background-color: lightgray;
+}
+
+.contactSeller {
+    background-color: lightgray;
+    height: 435px;
+    padding-right: 100px;
+}
+
+.contactSellerTitle {
+    top: 220px;
+    color: black;
+    text-align: center;
+}
+
+/*End for Contact Seller*/
+
+.outline {
+    outline: 2px solid black;
+}
+
+.backgroundColor {
+    background-color: #330033
+}
+
+.newAboutButton {
+    padding-right: 200px;
+    padding-bottom: 20px;
+    background-color: #330033;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+    padding-left: 180px;
+}
